@@ -1,0 +1,85 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+<meta name="viewport" content="width = 1050, user-scalable = no" />
+<script type="text/javascript" src="../../extras/jquery.min.1.7.js"></script>
+<script type="text/javascript" src="../../extras/modernizr.2.5.3.min.js"></script>
+<style>
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 0 auto; /* 15% from the top and centered */
+    padding: 10px;
+    width: 90%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+</style>
+</head>
+
+</head>
+
+<body>
+
+<!-- Trigger/Open The Modal -->
+<center><button id="myBtn">Open E-Book</button></center>
+
+<!-- The Modal -->
+<div id="myModal" class="modal" style="height:100%;">
+
+  <!-- Modal content -->
+  <div class="modal-content" style="height:100%;">
+    <span class="close">&times;</span>
+ <div id="isiMajalah" style="width:100%;"></div>
+  </div>
+
+</div>
+<script>
+$(document).ready(function(){
+
+    $("#myBtn").on("click", function(){
+		$(".modal").css("display","block");	
+     	//$("#isiMajalah").load('majalah.html').dialog({modal:true});
+		$("#isiMajalah" ).append($("<iframe width='100%' height='600' style='border:none;' />").attr("src", "majalah2.html"));
+    });
+	$(".close").on("click",function(){
+		$(".modal").css("display","none");
+		$("#isiMajalah").empty();
+	});
+});
+
+</script>
+
+</body>
+</html>
